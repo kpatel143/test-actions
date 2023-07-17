@@ -18,3 +18,16 @@ jobs:
         id: description-checker
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+  check_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR
+        uses: JJ/github-pr-contains-action@releases/v10
+        with:
+          github-token: ${{github.token}}
+          bodyDoesNotContain: "Delete|this"
+          bodyContains: "Test"
+          diffContains: ";"
+          diffDoesNotContain: "TODO|to do"
+          filesChanged: 1
+          linesChanged: 1
