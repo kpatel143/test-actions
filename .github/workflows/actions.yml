@@ -1,4 +1,4 @@
-name: "Check PR Description"
+name: "actions"
 on:
   pull_request:
     types:
