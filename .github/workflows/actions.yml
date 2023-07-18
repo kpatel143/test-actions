@@ -7,10 +7,10 @@ on:
       - reopened
       - labeled
       - unlabeled
+permissions: write-all
 
 jobs:
   check-pr-description:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,3 +31,13 @@ jobs:
           diffDoesNotContain: "TODO|to do"
           filesChanged: 1
           linesChanged: 1
+  pr-compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mtfoley/pr-compliance-action@main
+        with:
+          # all inputs are optional
+          watch-files: |
+            README.md
+          body-fail: true
+    
