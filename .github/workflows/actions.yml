@@ -40,4 +40,5 @@ jobs:
           watch-files: |
             README.md
           body-fail: true
+          ignore-team-members: false 
     
