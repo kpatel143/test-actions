@@ -41,4 +41,5 @@ jobs:
             README.md
           body-fail: true
           ignore-team-members: false 
+          body-auto-close: false
     
