@@ -31,3 +31,8 @@ jobs:
           diffDoesNotContain: "TODO|to do"
           filesChanged: 1
           linesChanged: 1
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello-world
+        run: echo "Hello World!"
